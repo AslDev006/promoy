@@ -1,0 +1,248 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-19 21:05+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\PTOMOY\settings.py:141
+msgid "Uzbek"
+msgstr ""
+
+#: .\PTOMOY\settings.py:142
+msgid "English"
+msgstr ""
+
+#: .\PTOMOY\settings.py:143
+msgid "Russian"
+msgstr ""
+
+#: .\models\views.py:102
+msgid "hello"
+msgstr ""
+
+#: .\templates\404.html:4
+msgid "Sahifa topilma"
+msgstr "Page not Found"
+
+#: .\templates\404.html:16
+msgid "Sahifa Topilmadi"
+msgstr "Page not Found"
+
+#: .\templates\404.html:17
+msgid ""
+"Kechirasiz, siz qidirgan sahifa bizning veb-saytimizda mavjud emas! Ehtimol, "
+"bizning uy sahifamizga o'ting yoki qidiruvdan foydalanishga harakat "
+"qilasizmi?"
+msgstr "Sorry, the page you are looking for is not available on our website! Maybe go to our home page or try to use the search?"
+
+#: .\templates\404.html:18 .\templates\pages\success.html:16
+msgid "Bosh sahifaga qaytish"
+msgstr "Back to Home"
+
+#: .\templates\base.html:51
+msgid "Bosh sahifa"
+msgstr "Home"
+
+#: .\templates\base.html:52 .\templates\base.html:87 .\templates\index.html:43
+#: .\templates\pages\about.html:4 .\templates\pages\about.html:18
+msgid "Biz haqimizda"
+msgstr "About us"
+
+#: .\templates\base.html:53 .\templates\base.html:88 .\templates\index.html:16
+#: .\templates\index.html:72 .\templates\pages\courses.html:15
+#: .\templates\pages\form.html:23
+msgid "Mahsulotlar"
+msgstr "Products"
+
+#: .\templates\base.html:54 .\templates\base.html:89 .\templates\base.html:94
+#: .\templates\pages\contact.html:5 .\templates\pages\contact.html:15
+msgid "Aloqa"
+msgstr "Contact"
+
+#: .\templates\base.html:86
+msgid "Havolalar"
+msgstr "Links"
+
+#: .\templates\base.html:90
+msgid "Videolar"
+msgstr "Videos"
+
+#: .\templates\base.html:91
+msgid "Ish Jarayoni"
+msgstr "Working Process"
+
+#: .\templates\base.html:95
+msgid "Salarbuyi ko'chasi - 35, Toshkent, O'zbekiston"
+msgstr "Salarbuyi Street-35, Tashkent, Uzbekistan"
+
+#: .\templates\base.html:106
+msgid "Galeriya"
+msgstr "Gallery"
+
+#: .\templates\base.html:117
+msgid ""
+"Bizning ustunliklarimiz online analitika va tulov tizimlari orqali ishlashi, "
+"hamda aparatning barcha elektronika ishlari sifatli unalishi va "
+"yig’ilishidir !"
+msgstr "Our advantages are the performance through online analytics and tulov systems, as well as the quality success and assembly of all the electronics of Aparat !"
+
+#: .\templates\index.html:4
+msgid "Bosh sahifa "
+msgstr "Home page"
+
+#: .\templates\index.html:19 .\templates\index.html:82
+#: .\templates\pages\courses.html:25 .\templates\pages\form.html:14
+msgid "Buyurtma berish"
+msgstr "Order"
+
+#: .\templates\index.html:44 .\templates\pages\about.html:19
+msgid "Promoyga xush kelibsiz !"
+msgstr "Welcome to Promoy"
+
+#: .\templates\index.html:45 .\templates\pages\about.html:20
+msgid ""
+"Promoy – bu yuqori sifatli xizmatlar va innovatsion yechimlar bilan sizning "
+"muvaffaqiyatingizga hissa qo‘shuvchi ishonchli hamkor. Biz sizga o’z-o’ziga "
+"xizmat kursatuvchi avto yuvish shahobchasini qurishda noldan yordam beramiz. "
+"Kompaniyamizda eng sifatli jihozlardan foydalanadi va o’z muallifligidagi "
+"platalarda ishlovchi boshqaruv pultlarini taklif qiladi. Bizning "
+"ustunliklarimiz online analitika va tulov tizimlari orqali ishlashi, hamda "
+"aparatning barcha elektronika ishlari sifatli unalishi va yig’ilishidir. "
+"Boshqaruv pultlarining sifatiga va ishlashiga 1 yil kafolat beriladi. "
+"Bizning maqsadimiz, har bir mijozimizga individual yondashuv va professional "
+"xizmat ko‘rsatishdir. Bizning tajribali jamoamiz sizning ehtiyojlaringizga "
+"mos ravishda eng yaxshi yechimlarni taqdim etadi. Texnologiyalar va "
+"trendlarni kuzatib boramiz, shuning uchun siz har doim zamonaviy va samarali "
+"xizmatlardan foydalanasiz.Biz bilan bog‘laning va kelajakdagi "
+"muvaffaqiyatlaringizni birga qura boshlaylik! Biz bilan biznesingizni yo’lga "
+"quyib, daromat kurishni boshlang! Promoy-barakali biznes sari birga qadam "
+"tashlaymiz"
+msgstr "Promoy is a reliable partner that contributes to your success with high-quality services and innovative solutions. We will help you build a self-service coursework auto wash shop from scratch. It uses the best quality equipment in our company and offers control remotes working on boards of its own authorship. Our advantages are the performance through online analytics and tulov systems, as well as the quality recognition and assembly of all the electronics work of Aparat. The quality and operation of the control remotes is guaranteed for 1 year. Our goal is to provide an individual approach and professional service to each of our customers. Our experienced team provides the best solutions to suit your needs. We keep track of technologies and trends, so you can always use modern and effective services foydalanasiz.Biz contact and let's start building your future successes together! Start combing with us, putting your business on the road! We will step together towards a promo-blessed business"
+
+#: .\templates\index.html:48 .\templates\pages\about.html:23
+msgid "Sifat kafolati"
+msgstr "Quality assurance"
+
+#: .\templates\index.html:51 .\templates\pages\about.html:26
+msgid "Tezkor servis xizmati"
+msgstr "Quick service"
+
+#: .\templates\index.html:54 .\templates\pages\about.html:29
+msgid "Qulaylik"
+msgstr "Convenience"
+
+#: .\templates\index.html:57 .\templates\pages\about.html:32
+msgid "Zamonaviy texnologiyalar"
+msgstr "Modern technology"
+
+#: .\templates\index.html:73
+msgid "Ommabop Mahsulotlar"
+msgstr "Popular products"
+
+#: .\templates\index.html:109
+msgid "Hamkorlar"
+msgstr "Partners"
+
+#: .\templates\index.html:110
+msgid "Biz haqimizda hamkorlar fikri"
+msgstr "Opinion of partners about us"
+
+#: .\templates\pages\contact.html:16
+msgid "Promoy kompaniyasi bilan aloqa"
+msgstr "Contact the Promoy"
+
+#: .\templates\pages\contact.html:20
+msgid ""
+"Promoy – bu yuqori sifatli xizmatlar va innovatsion yechimlar bilan sizning "
+"muvaffaqiyatingizga hissa qo‘shuvchi ishonchli hamkor. Biz sizga o’z-o’ziga "
+"xizmat kursatuvchi avto yuvish shahobchasini qurishda noldan yordam beramiz."
+msgstr "Promoy is a reliable partner that contributes to your success with high-quality services and innovative solutions. We will help you build a self-service coursework auto wash shop from scratch."
+
+#: .\templates\pages\contact.html:26
+msgid "Office"
+msgstr ""
+
+#: .\templates\pages\contact.html:27
+msgid "Salarbo'yi ko'chasi, 35, Toshkent"
+msgstr "Salarboy Street, 35, Tashkent"
+
+#: .\templates\pages\contact.html:35
+msgid "Mobile"
+msgstr ""
+
+#: .\templates\pages\contact.html:44
+msgid "Email"
+msgstr ""
+
+#: .\templates\pages\contact.html:61 .\templates\pages\form.html:19
+msgid "Ism Familya"
+msgstr "Full name"
+
+#: .\templates\pages\contact.html:67
+msgid "Telefon Raqam"
+msgstr "Phone number"
+
+#: .\templates\pages\contact.html:73 .\templates\pages\form.html:35
+msgid "Manzil"
+msgstr "Address"
+
+#: .\templates\pages\contact.html:79
+msgid "Xabar"
+msgstr "Message"
+
+#: .\templates\pages\contact.html:83 .\templates\pages\form.html:43
+msgid "Yuborish"
+msgstr "Send"
+
+#: .\templates\pages\courses.html:5
+msgid "Mahsolotlar"
+msgstr "Products"
+
+#: .\templates\pages\courses.html:16
+msgid "Barcha Mahsulotlar"
+msgstr "All Products"
+
+#: .\templates\pages\form.html:6
+msgid "Forma"
+msgstr "Form Page"
+
+#: .\templates\pages\form.html:13
+msgid "Buyurtmalar"
+msgstr "Orders"
+
+#: .\templates\pages\form.html:20
+msgid "Aliyev Jasur"
+msgstr ""
+
+#: .\templates\pages\form.html:31
+msgid "Mahsulot miqdori"
+msgstr "Product quantity"
+
+#: .\templates\pages\form.html:36
+msgid "Toshkent shahar Mirzo ulug'bek tumani"
+msgstr "Tashkent City Mirzo Ulugbek district"
+
+#: .\templates\pages\form.html:39
+msgid "Telefon raqam"
+msgstr "Phone number"
+
+#: .\templates\pages\success.html:4
+msgid "Muvaffaqiyatli"
+msgstr "Successfully"
+
+#: .\templates\pages\success.html:15
+msgid "Xabaringiz muvaffqiyatli yuborildi"
+msgstr "Your message was successfully send"

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %} {% blocktrans %}Biz haqimizda{% endblocktrans %} {% endblock title %}
+
+{% block content %}
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="https://media.istockphoto.com/id/1279725031/photo/vehicle-maintenance-handsome-man-servicer-explain-car-condition-and-expense-to-smile-male.jpg?s=612x612&w=0&k=20&c=1w7zqdO8lAbaUjApjw8HGF8MHQ3DIaV4iMPPobrIJHA=" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">{% blocktrans %}Biz haqimizda{% endblocktrans %}</h6>
+                    <h1 class="mb-4">{% blocktrans %}Promoyga xush kelibsiz !{% endblocktrans %}</h1>
+                    <p class="mb-4" style="text-align: justify;">{% blocktrans %}Promoy – bu yuqori sifatli xizmatlar va innovatsion yechimlar bilan sizning muvaffaqiyatingizga hissa qo‘shuvchi ishonchli hamkor. Biz sizga o’z-o’ziga xizmat kursatuvchi avto yuvish shahobchasini qurishda noldan yordam beramiz. Kompaniyamizda eng sifatli jihozlardan foydalanadi va o’z muallifligidagi platalarda ishlovchi boshqaruv pultlarini taklif qiladi. Bizning ustunliklarimiz online analitika va tulov tizimlari orqali ishlashi, hamda aparatning barcha elektronika ishlari sifatli unalishi va yig’ilishidir. Boshqaruv pultlarining sifatiga va ishlashiga 1 yil kafolat beriladi. Bizning maqsadimiz, har bir mijozimizga individual yondashuv va professional xizmat ko‘rsatishdir. Bizning tajribali jamoamiz sizning ehtiyojlaringizga mos ravishda eng yaxshi yechimlarni taqdim etadi. Texnologiyalar va trendlarni kuzatib boramiz, shuning uchun siz har doim zamonaviy va samarali xizmatlardan foydalanasiz.Biz bilan bog‘laning va kelajakdagi muvaffaqiyatlaringizni birga qura boshlaylik! Biz bilan biznesingizni yo’lga quyib, daromat kurishni boshlang! Promoy-barakali biznes sari birga qadam tashlaymiz{% endblocktrans %}</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-check text-primary me-2"></i>{% blocktrans %}Sifat kafolati{% endblocktrans %}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-check text-primary me-2"></i>{% blocktrans %}Tezkor servis xizmati{% endblocktrans %}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-check text-primary me-2"></i>{% blocktrans %}Qulaylik{% endblocktrans %}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-check text-primary me-2"></i>{% blocktrans %}Zamonaviy texnologiyalar{% endblocktrans %}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+        
+
+    {% endblock content %}

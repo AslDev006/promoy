@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% block title %} {% blocktrans %}Mahsolotlar{% endblocktrans %} {% endblock title %}
+
+{% block content %}
+
+
+
+    <!-- Courses Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">{% blocktrans %}Mahsulotlar{% endblocktrans %}</h6>
+                <h1 class="mb-5">{% blocktrans %}Barcha Mahsulotlar{% endblocktrans %}</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                {% for product in products %}
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-item bg-light">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="{{ product.photo.url }}" alt="" style="">
+                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                <a href="{% url 'form_page' %}" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px ;">{% blocktrans %}Buyurtma berish{% endblocktrans %}</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0">${{ product.currency }}</h3>
+                            <div class="mb-3">
+                                <p>
+                                    {{ product.description }}
+                                </p>
+                            </div>
+                            <h5 class="mb-4">{{ product.title }}</h5>
+                        </div>
+                        <div class="d-flex border-top">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    <!-- Courses End -->
+
+    </div>
+
+{% endblock content %}

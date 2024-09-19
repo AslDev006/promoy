@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %} {% blocktrans %}Forma{% endblocktrans %} {% endblock title %}
+{% block content %}
+
+    <!-- Courses Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">{% blocktrans %}Buyurtmalar{% endblocktrans %}</h6>
+                <h1 class="mb-5">{% blocktrans %}Buyurtma berish{% endblocktrans %}</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+              <form class="form_pro" method="POST">{% csrf_token %}
+                <div class="form-group" style="margin-top: 15px">
+                  <label for="name">{% blocktrans %}Ism Familya{% endblocktrans %}</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="{% blocktrans %}Aliyev Jasur{% endblocktrans %}">
+                </div>
+                <div class="form-group" style="background:#fff; margin-top: 15px;">
+                  <label for="exampleFormControlSelect2" style="background:#fff;">{% blocktrans %}Mahsulotlar{% endblocktrans %}</label>
+                  <select multiple class="form-control" id="exampleFormControlSelect2" style="background:#fff;" name="product">
+                      {% for pro in products %}
+                        <option>{{ pro.title.title }}</option>
+                      {% endfor %}
+                  </select>
+                </div>
+                <div class="form-group" style="margin-top: 15px">
+                  <label for="count">{% blocktrans %}Mahsulot miqdori{% endblocktrans %}</label>
+                  <input type="number" class="form-control" id="count" name="count" placeholder="23....">
+                </div>
+                <div class="form-group" style="margin-top: 15px">
+                  <label for="address">{% blocktrans %}Manzil{% endblocktrans %}</label>
+                  <input type="address" class="form-control" id="address" name="address" placeholder="{% blocktrans %}Toshkent shahar Mirzo ulug'bek{% endblocktrans %}">
+                </div>
+                <div class="form-group" style="margin-top: 15px">
+                  <label for="phone_number">{% blocktrans %}Telefon raqam{% endblocktrans %}</label>
+                  <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="+998901234567">
+                </div>
+                <div class="form-group align-justify-center" style="margin-top: 15px; width:100%" >
+                  <input type="submit" class="form-control" value="{% blocktrans %}Yuborish{% endblocktrans %}" style="width:200px">
+                </div>
+
+              </form>
+            </div>
+      </div>
+    </div>
+
+
+{% endblock content %}
