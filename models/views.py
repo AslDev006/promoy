@@ -1,12 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .bot import get_post, get_post1
-from .models import ServiceModel, ProductModel, AdviceModel, PartnerModel
+from .models import ServiceModel, ProductModel, AdviceModel, PartnerModel, ImagesModel
 from .forms import AdviceForm, ProductForm
 from django.utils.translation import gettext as _
 from django.utils.translation import get_language, activate, gettext
 
 def home(req):
     service = ServiceModel.objects.filter(important=True)
+    images = ImagesModel.objects.all()[:1]
     products = ServiceModel.objects.all()[:3]
     product_footer = ServiceModel.objects.all()[:6]
     partners = PartnerModel.objects.filter(important=True)[:4]
@@ -17,6 +18,7 @@ def home(req):
         "products": products,
         'partners': partners,
         'product_footer': product_footer,
+        'images': images
     }
     # if req.method == 'POST' and form.is_valid():
     #     form.save()

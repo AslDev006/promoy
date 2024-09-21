@@ -52,3 +52,10 @@ class PartnerModel(models.Model):
     def __str__(self):
         return self.name
         return self.name
+
+class ImagesModel(models.Model):
+    about = CloudinaryField()
+    favicon = CloudinaryField()
+    logo = CloudinaryField()
+
+    

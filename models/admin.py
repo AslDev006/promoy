@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import AdviceModel, ProductModel, ServiceModel, PartnerModel
+from .models import AdviceModel, ProductModel, ServiceModel, PartnerModel, ImagesModel
 
-
+admin.site.register(ImagesModel)
 @admin.register(ServiceModel)
 class NewsAdmin(admin.ModelAdmin):
     list_display = ['title', 'currency', 'create_time', 'important']
