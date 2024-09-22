@@ -4,7 +4,7 @@ from pathlib import Path
 import environ
 env = environ.Env()
 environ.Env.read_env()
-
+import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = env('SECRET_KEY')
@@ -80,10 +80,7 @@ WSGI_APPLICATION = 'PTOMOY.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(env("DATABASE_URL"))
 }
 
 

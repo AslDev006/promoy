@@ -85,7 +85,7 @@
                         <div class="text-center p-4 pb-0">
                             <h3 class="mb-0">${{ product.currency }}</h3>
                             <div class="mb-3">
-                                {{ product.description }}
+                                {{ product.description | truncatewords:100}}
                             </div>
                             <h5 class="mb-4">{{ product.title }}</h5>
                         </div>
