@@ -16,7 +16,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">{% blocktrans %}Mahsulotlar{% endblocktrans %}</h5>
                                 <h1 class="display-3 text-white animated slideInDown">{{ product.title }}</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">{{ product.description | truncatewords:20 }}</p>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">{% blocktrans %}Buyurtma berish{% endblocktrans %}</a>
+                                <a href="{% url 'form_page' %}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">{% blocktrans %}Buyurtma berish{% endblocktrans %}</a>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,36 @@
     </div>
     <!-- Courses End -->
 
+    <!-- Courses Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">{% blocktrans %}Mijozlar{% endblocktrans %}</h6>
+                <h1 class="mb-5">{% blocktrans %}Biz haqimizda mijozlarimiz fikri{% endblocktrans %}</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                {% for customer in customer %}
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="course-item bg-light">
+                        <div class="position-relative overflow-hidden">
+                            <iframe width="400" height="526" src="{{ customer.url }}" title="How To Set Up Multi Step Online Forms l Tilda Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <div class="mb-3">
+                                {{ customer.opinion | truncatewords:50}}
+                            </div>
+                            <h5 class="mb-4">{{ customer.full_name }}</h5>
+                        </div>
+                        <div class="d-flex border-top">
+                        </div>
+                    </div>
+                </div>
+                
+            {% endfor %}
 
+        </div>
+    </div>
+    <!-- Courses End -->
 
 
     <!-- Testimonial Start -->
@@ -124,7 +153,7 @@
         </div>
     </div>
     </div>
-    <!-- Testimonial End -->
-        
-
+    </div>
 {% endblock content %}
+
+<!--<iframe width="364" height="646" src="https://www.youtube.com/embed/He17raAsi-I" title="8-iyul, 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->

@@ -1,52 +1,306 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Selection Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
 
-{% load static %}
-{% load i18n %}
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-{% block title %} {% blocktrans %}Forma{% endblocktrans %} {% endblock title %}
-{% block content %}
+        .form-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-    <!-- Courses Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">{% blocktrans %}Buyurtmalar{% endblocktrans %}</h6>
-                <h1 class="mb-5">{% blocktrans %}Buyurtma berish{% endblocktrans %}</h1>
+        .form-header img {
+            width: 100%;
+            /* Rasm kengligini 100% qilib o'zgartirdik */
+            height: auto;
+            /* Avtomatik balandlik */
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input,
+        select {
+            width: calc(100% - 22px);
+            /* Barcha elementlar kengligi bir xil bo'lishi uchun */
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            /* Yumshoq chekkalar */
+            transition: all 0.3s ease;
+            /* Yumshoq o'tish */
+            background: linear-gradient(to right, #ffffff, #f0f0f0);
+            /* Yumshoq gradient fon */
+        }
+
+        select:focus,
+        input:focus {
+            border-color: #007bff;
+            /* Focusda ko'k chegara */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            /* Focusda yumshoq soya */
+            background: white;
+            /* Focusda oq fon */
+        }
+
+        #total-price {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            /* Yumshoq o'tish */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            /* Hoverda to'q ko'k rang */
+        }
+
+        button:disabled {
+            background-color: #ccc;
+        }
+
+        .feature-selection {
+            display: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .select-error {
+            border: 1px solid red;
+            /* Qizil rangli chegaralar */
+            background-color: #ffe6e6;
+            /* Qizil rangli fon */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <div class="form-header">
+            <img src="https://res.cloudinary.com/dds8wmit7/image/upload/v1729580957/gyxaznhwttiqccfyqqvk.png" alt="Product Image">
+            <h2>Product Order Form</h2>
+        </div>
+        <form id="productForm" method="post">{% csrf_token %}
+            <div class="form-group">
+                <label for="name">Ism Familya</label>
+                <input type="text" id="name" name="name" placeholder="Alisher Odilov" required>
             </div>
-            <div class="row g-4 justify-content-center">
-              <form class="form_pro" method="POST">{% csrf_token %}
-                <div class="form-group" style="margin-top: 15px">
-                  <label for="name">{% blocktrans %}Ism Familya{% endblocktrans %}</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="{% blocktrans %}Aliyev Jasur{% endblocktrans %}">
-                </div>
-                <div class="form-group" style="background:#fff; margin-top: 15px;">
-                  <label for="exampleFormControlSelect2" style="background:#fff;">{% blocktrans %}Mahsulotlar{% endblocktrans %}</label>
-                  <select multiple class="form-control" id="exampleFormControlSelect2" style="background:#fff;" name="product">
-                      {% for pro in products %}
-                        <option>{{ pro.title.title }}</option>
-                      {% endfor %}
-                  </select>
-                </div>
-                <div class="form-group" style="margin-top: 15px">
-                  <label for="count">{% blocktrans %}Mahsulot miqdori{% endblocktrans %}</label>
-                  <input type="number" class="form-control" id="count" name="count" placeholder="23....">
-                </div>
-                <div class="form-group" style="margin-top: 15px">
-                  <label for="address">{% blocktrans %}Manzil{% endblocktrans %}</label>
-                  <input type="address" class="form-control" id="address" name="address" placeholder="{% blocktrans %}Toshkent shahar Mirzo ulug'bek{% endblocktrans %}">
-                </div>
-                <div class="form-group" style="margin-top: 15px">
-                  <label for="phone_number">{% blocktrans %}Telefon raqam{% endblocktrans %}</label>
-                  <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="+998901234567">
-                </div>
-                <div class="form-group align-justify-center" style="margin-top: 15px; width:100%" >
-                  <input type="submit" class="form-control" value="{% blocktrans %}Yuborish{% endblocktrans %}" style="width:200px">
-                </div>
-
-              </form>
+            <div class="form-group">
+                <label for="address">Manzil</label>
+                <input type="text" id="address" name="address" placeholder="Toshkent Shahar" required>
             </div>
-      </div>
+            <div class="form-group">
+                <label for="phone_number">Telefon raqam</label>
+                <input type="tel" id="phone_number" name="phone_number" placeholder="+998901234567" required>
+            </div>
+            <div class="form-group">
+                <label for="featureCount">Nechta funksiya bo'lsin ?</label>
+                <select id="featureCount" name="feature_count" required>
+                    <option value="0">Funksiyani sonini tanlang</option>
+                    <option value="3">3 ta Funksiya</option>
+                    <option value="4">4 ta Funksiya</option>
+                    <option value="5">5 ta Funksiya</option>
+                    <option value="6">6 ta Funksiya</option>
+                    <option value="7">7 ta Funksiya</option>
+                    <option value="8">8 ta Funksiya</option>
+                </select>
+            </div>
+
+            <!-- Feature selection fields -->
+            <div class="form-group feature-selection">
+                <label for="feature1">1-funksiya</label>
+                <select id="feature1" name="feature_1">
+                    <option value="">Funksiyani tanlang</option>
+                    {% for function in functions %}
+                    <option value="{{function.value}}">{{ function.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group feature-selection">
+                <label for="feature2">2-funksiya</label>
+                <select id="feature2" name="feature_2">
+                    <option value="">Funksiyani tanlang</option>
+                    {% for function in functions %}
+                    <option value="{{function.value}}">{{ function.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group feature-selection">
+                <label for="feature3">3-funksiya</label>
+                <select id="feature3" name="feature_3">
+                    <option value="">Funksiyani tanlang</option>
+                    {% for function in functions %}
+                    <option value="{{function.value}}">{{ function.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group feature-selection">
+                <label for="feature4">4-funksiya</label>
+                <select id="feature4" name="feature_4">
+                    <option value="">Funksiyani tanlang</option>
+                    {% for function in functions %}
+                    <option value="{{function.value}}">{{ function.name }}</option>
+                    {% endfor %}
+                </select>
+                </div>
+            <div class="form-group feature-selection">
+                <label for="feature5">5-funksiya</label>
+                <select id="feature5" name="feature_5">
+                    <option value="">Funksiyani tanlang</option>
+                    {% for function in functions %}
+                    <option value="{{function.value}}">{{ function.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group feature-selection">
+                <label for="feature6">6-funksiya</label>
+                <select id="feature6" name="feature_6">
+                    <option value="">Funksiyani tanlang</option>
+                    {% for function in functions %}
+                    <option value="{{function.value}}">{{ function.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group feature-selection">
+                <label for="feature7">7-funnksiya</label>
+                <select id="feature7" name="feature_7">
+                    <option value="">Funksiyani tanlang</option>
+                    {% for function in functions %}
+                    <option value="{{function.value}}">{{ function.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group feature-selection">
+                <label for="feature8">8-funksiya</label>
+                <select id="feature8" name="feature_8">
+                    <option value="">Funksiyani tanlang</option>
+                    {% for function in functions %}
+                    <option value="{{function.value}}">{{ function.name }}</option>
+                    {% endfor %}
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label for="feture_count">Mahsulot soni</label>
+                <input type="number" id="feture_count" name="count" placeholder="123..." required>
+            </div>
+
+            <div class="error" id="error-message" style="display: none;"></div>
+
+            <button type="submit">Submit</button>
+        </form>
     </div>
 
+    <script>
 
-{% endblock content %}
+
+        const featureCountSelect = document.getElementById('featureCount');
+        const featureSelections = document.querySelectorAll('.feature-selection');
+        const submitButton = document.querySelector('button[type="submit"]');
+        const errorMessage = document.getElementById('error-message');
+        const form = document.getElementById('productForm');
+
+        // Show feature selection fields based on the selected count
+        featureCountSelect.addEventListener('change', function () {
+            const selectedCount = parseInt(this.value);
+            featureSelections.forEach((section, index) => {
+                section.style.display = index < selectedCount ? 'block' : 'none';
+            });
+
+            // Reset the selections and price
+            featureSelections.forEach(section => {
+                const selectElement = section.querySelector('select');
+                selectElement.value = '';
+                selectElement.classList.remove('select-error'); // O'chirish xatolari
+            });
+        });
+
+
+        // Handle form submission
+       form.addEventListener('submit', function (event) {
+        const selectedFeatures = [];
+        let hasError = false;
+
+        // Clear previous error styles
+        featureSelections.forEach(section => {
+            const selectElement = section.querySelector('select');
+            selectElement.classList.remove('duplicate', 'select-error');
+        });
+
+        // Check for duplicate feature selections
+        featureSelections.forEach((section) => {
+            const selectElement = section.querySelector('select');
+            const selectedValue = selectElement.value;
+
+            if (selectedValue) {
+                if (selectedFeatures.includes(selectedValue)) {
+                    hasError = true;
+                    // Highlight the duplicate select element
+                    selectElement.classList.add('duplicate', 'select-error');
+                } else {
+                    selectedFeatures.push(selectedValue);
+                }
+            }
+        });
+
+        if (hasError) {
+            event.preventDefault();  // Stops form submission
+            errorMessage.textContent = 'Boshqa xususiyatni tanlang!';
+            errorMessage.style.display = 'block';
+        } else {
+            errorMessage.style.display = 'none';
+            submitButton.disabled = true;
+        }
+    });
+
+    </script>
+</body>
+</html>

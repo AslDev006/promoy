@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .bot import get_post, get_post1
-from .models import ServiceModel, ProductModel, AdviceModel, PartnerModel, ImagesModel
+from .bot import get_post, get_post1, get_post12
+from .models import ServiceModel, ProductModel, AdviceModel, PartnerModel, ImagesModel, Customer_Opinion, FunctionsModel
 from .forms import AdviceForm, ProductForm
 from django.utils.translation import gettext as _
 from django.utils.translation import get_language, activate, gettext
@@ -9,6 +9,7 @@ def home(req):
     service = ServiceModel.objects.filter(important=True)
     images = ImagesModel.objects.all()[:1]
     products = ServiceModel.objects.all()[:3]
+    customer = Customer_Opinion.objects.all()[:3]
     product_footer = ServiceModel.objects.all()[:6]
     partners = PartnerModel.objects.filter(important=True)[:4]
     form = AdviceForm(req.POST or None)
@@ -18,7 +19,8 @@ def home(req):
         "products": products,
         'partners': partners,
         'product_footer': product_footer,
-        'images': images
+        'images': images,
+        'customer': customer
     }
     # if req.method == 'POST' and form.is_valid():
     #     form.save()
@@ -69,23 +71,29 @@ def contact_page(request):
     return render(request, 'pages/contact.html', context)
 
 def form_page(request):
+    get_post12()
     product_footer = ServiceModel.objects.all()[:6]
     products = ServiceModel.objects.all()
+    functions = FunctionsModel.objects.all()
     form = ProductForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
         print("GOOD")
         form.save()
+        print(form.data)
         get_post1(form.data)
         form = ProductForm()
         return redirect('success_page')
+
     else:
         form = ProductForm()
         print("NOT GOOD")
+        print(form.errors)
     context = {
-        'products': products,
-        "product_footer": product_footer,
-        'form': form,
-    }
+            'products': products,
+            "product_footer": product_footer,
+            'form': form,
+            'functions': functions
+        }
     return render(request, 'pages/form.html', context)
 
 def success_page(request):

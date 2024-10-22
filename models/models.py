@@ -1,3 +1,4 @@
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.db.models import CharField
 from phonenumber_field.modelfields import PhoneNumberField
@@ -18,8 +19,17 @@ class AdviceModel(models.Model):
 class ProductModel(models.Model):
     name = models.CharField(max_length=255)
     phone_number = PhoneNumberField()
-    product = models.CharField(max_length=255)
     count = models.IntegerField()
+    address = models.CharField(max_length=255)
+    feature_count = models.IntegerField(validators=[MaxValueValidator(8), MinValueValidator(3)])
+    feature_1 = models.CharField(max_length=255, null=True, blank=True)
+    feature_2 = models.CharField(max_length=255, null=True, blank=True)
+    feature_3 = models.CharField(max_length=255, null=True, blank=True)
+    feature_4 = models.CharField(max_length=255, null=True, blank=True)
+    feature_5 = models.CharField(max_length=255, null=True, blank=True)
+    feature_6 = models.CharField(max_length=255, null=True, blank=True)
+    feature_7 = models.CharField(max_length=255, null=True, blank=True)
+    feature_8 = models.CharField(max_length=255, null=True, blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
     def __str__(self):
@@ -58,4 +68,17 @@ class ImagesModel(models.Model):
     favicon = CloudinaryField()
     logo = CloudinaryField()
 
-    
+class Customer_Opinion(models.Model):
+    url = models.URLField()
+    opinion = models.TextField()
+    full_name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.full_name} {self.url}"
+
+class FunctionsModel(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
