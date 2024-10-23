@@ -8,6 +8,7 @@ from django.utils.translation import get_language, activate, gettext
 def home(req):
     service = ServiceModel.objects.filter(important=True)
     images = ImagesModel.objects.all()[:1]
+    functions = FunctionsModel.objects.all()
     products = ServiceModel.objects.all()[:3]
     customer = Customer_Opinion.objects.all()[:3]
     product_footer = ServiceModel.objects.all()[:6]
@@ -20,10 +21,9 @@ def home(req):
         'partners': partners,
         'product_footer': product_footer,
         'images': images,
-        'customer': customer
+        'customer': customer,
+        'functions': functions
     }
-    # if req.method == 'POST' and form.is_valid():
-    #     form.save()
     return render(req, 'index.html', context)
 
 def about_us(request):

@@ -16,6 +16,13 @@ class AdviceModel(models.Model):
     def __str__(self):
         return f"{self.name} {self.phone_number}"
 
+# class Features(models.Model):
+#     name = models.CharField(max_length=255, null=True, blank=True)
+#     # product_model = models.ManyToManyField(to="ProductModel", on_delete=models.SET_NULL, null=True, related_name='features')
+#     features = models.ManyToManyField('ProductModel')
+
+
+
 class ProductModel(models.Model):
     name = models.CharField(max_length=255)
     phone_number = PhoneNumberField()
@@ -32,6 +39,7 @@ class ProductModel(models.Model):
     feature_8 = models.CharField(max_length=255, null=True, blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return f"{self.name} {self.phone_number}"
 
